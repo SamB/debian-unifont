@@ -39,7 +39,7 @@ binary-indep: build install
 #	dh_testversion
 	dh_testdir
 	dh_testroot
-	dh_installdocs
+	dh_installdocs Readme
 #	dh_installexamples
 #	dh_installmenu
 #	dh_installemacsen
@@ -54,7 +54,7 @@ binary-indep: build install
 	dh_fixperms
 #	dh_suidregister
 	dh_installdeb
-	dh_shlibdeps
+#	dh_shlibdeps
 	dh_gencontrol
 #	dh_makeshlibs
 	dh_md5sums

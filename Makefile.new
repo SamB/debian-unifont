@@ -1,0 +1,27 @@
+
+all: unifont-f.pcf.gz unifont-h.pcf.gz
+
+unifont-f.pcf.gz: unifont-f.pcf
+	gzip -9 <unifont-f.pcf >unifont-f.pcf.gz
+
+unifont-h.pcf.gz: unifont-h.pcf
+	gzip -9 <unifont-h.pcf >unifont-h.pcf.gz
+
+unifont-f.pcf: unifont-f.bdf
+	bdftopcf unifont-f.bdf > unifont-f.pcf
+
+unifont-h.pcf: unifont-h.bdf
+	bdftopcf unifont-h.bdf > unifont-h.pcf
+
+unifont-f.bdf: unifont.hex
+	./hex2bdf y unifont.hex > unifont-f.bdf
+
+unifont-h.bdf: unifont.hex
+	./hex2bdf n unifont.hex > unifont-h.bdf
+
+install: unifont-f.pcf.gz unifont-h.pcf.gz
+	install -m 755 -o root -g root -d ${DESTDIR}/usr/X11R6/lib/X11/fonts/misc
+	install -m 644 -o root -g root unifont*.pcf.gz ${DESTDIR}/usr/X11R6/lib/X11/fonts/misc
+
+clean:
+	rm -f unifont-f.pcf.gz unifont-f.pcf unifont-f.bdf unifont-h.pcf.gz unifont-h.pcf unifont-h.bdf

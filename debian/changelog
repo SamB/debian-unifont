@@ -1,3 +1,21 @@
+unifont (1:1.0-1) unstable; urgency=low
+
+  * Correct Build-Depends, closes: #134431
+  * New Upstream (dvdeug) and -release. Note that I did *not* change
+    the font's name or split it in two like the replacement upstream did.
+    Please mail if you think it's a good idea to do the split anyway
+    (and break compatibility).
+  * Integrated Ruchira Datta's Bengali glyphs, closes: #69896
+
+ -- Bart Schuller <schuller@debian.org>  Mon, 18 Feb 2002 21:43:36 +0100
+
+unifont (20000122-1) unstable; urgency=low
+
+  * New upstream release, adding lots of new glyphs, closes: #60908
+  * Upgrade to standards version 3.1.0
+
+ -- Bart Schuller <schuller@debian.org>  Wed, 22 Mar 2000 23:24:14 +0100
+
 unifont (19990430-1) unstable; urgency=low
 
   * New upstream release, adding 16 new glyphs
@@ -11,7 +29,3 @@ unifont (19990401-1) unstable; urgency=low
 
  -- Bart Schuller <schuller@debian.org>  Wed,  7 Apr 1999 22:26:14 +0200
 
-Local variables:
-mode: debian-changelog
-add-log-mailing-address: "schuller@debian.org"
-End:

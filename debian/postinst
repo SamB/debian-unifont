@@ -12,4 +12,5 @@ if [ -x /usr/X11R6/bin/mkfontdir ]; then
   done
 fi
 
-exit
+#DEBHELPER#
+
