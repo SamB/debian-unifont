@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+font="misc"
+
+if [ -x /usr/X11R6/bin/mkfontdir ]; then
+  for i in $font; do
+    dir=/usr/X11R6/lib/X11/fonts/$i
+    echo Adjusting font index in $dir...
+    (cd $dir; /usr/X11R6/bin/mkfontdir)
+  done
+fi
+
+exit

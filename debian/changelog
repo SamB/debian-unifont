@@ -1,0 +1,17 @@
+unifont (19990430-1) unstable; urgency=low
+
+  * New upstream release, adding 16 new glyphs
+  * Made scripts executable, closes: #40374
+
+ -- Bart Schuller <schuller@debian.org>  Tue, 29 Jun 1999 14:54:01 +0200
+
+unifont (19990401-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Bart Schuller <schuller@debian.org>  Wed,  7 Apr 1999 22:26:14 +0200
+
+Local variables:
+mode: debian-changelog
+add-log-mailing-address: "schuller@debian.org"
+End:
