@@ -30,7 +30,7 @@ install-stamp: build-stamp
 	dh_clean -k
 	dh_installdirs
 
-	$(MAKE) install DESTDIR=`pwd`/debian/tmp
+	$(MAKE) install DESTDIR=`pwd`/debian/unifont
 
 	touch install-stamp
 
@@ -64,7 +64,7 @@ binary-indep: build install
 # Build architecture-dependent files here.
 binary-arch: build install
 
-source diff:                                                                  
+source diff:
 	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
 
 binary: binary-indep binary-arch

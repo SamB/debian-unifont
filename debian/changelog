@@ -1,3 +1,14 @@
+unifont (1:1.0-2) unstable; urgency=low
+
+  * QA upload (see #356594).
+  * Bump Standards-Version.
+  * Upgrade to debhelper 4.
+  * Rebuilding makes /usr/doc transition (Closes: #352894).
+  * Uppercase 'Unicode' in Description (Closes: #172067).
+  * Recommends: xutils (Closes: #224023).
+
+ -- Christoph Berg <myon@debian.org>  Sat,  8 Apr 2006 01:36:56 +0200
+
 unifont (1:1.0-1) unstable; urgency=low
 
   * Correct Build-Depends, closes: #134431
