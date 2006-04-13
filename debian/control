@@ -3,11 +3,11 @@ Section: x11
 Priority: optional
 Maintainer: Debian QA Group <packages@qa.debian.org>
 Standards-Version: 3.6.2
-Build-Depends-Indep: debhelper (>> 4), xutils
+Build-Depends-Indep: debhelper (>= 5.0.29), xfonts-utils
 
 Package: unifont
 Architecture: all
-Recommends: xutils
+Recommends: ${misc:Depends}
 Description: X11 dual-width GNU Unicode font
  The GNU Unicode font is an X11 bitmap font in iso10646 encoding. It is
  useful if you have X programs such as the yudit text editor that are

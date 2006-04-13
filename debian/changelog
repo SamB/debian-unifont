@@ -1,3 +1,16 @@
+unifont (1:1.0-3) unstable; urgency=low
+
+  * QA upload.
+  * Switch to debhelper 5.
+  * Transition to modular X.  Closes: #362338.
+    - Move fonts to /usr/share/fonts/X11.
+    - Build-depend on xfonts-utils instead of xutils.
+    - Build-depend on debhelper 5.0.29, which supports the new font
+      location, and replaces the xutils dependency with xfonts-utils.
+  * Let dh_compress compress .pcf files.
+
+ -- Matej Vela <vela@debian.org>  Thu, 13 Apr 2006 14:44:53 +0200
+
 unifont (1:1.0-2) unstable; urgency=low
 
   * QA upload (see #356594).
