@@ -1,9 +1,3 @@
-unifont (1:1.0-4~bpo40+1) etch-backports; urgency=low
-
-  * etch backport.
-
- -- Robert Millan <rmh@aybabtu.com>  Thu,  7 Feb 2008 23:19:22 +0100
-
 unifont (1:1.0-4) unstable; urgency=low
 
   * QA upload.
