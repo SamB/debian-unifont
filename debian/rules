@@ -25,7 +25,7 @@ install: build
 	dh_testroot
 	dh_clean -k
 	dh_installdirs
-	dh_install unifont.pcf usr/share/fonts/X11/misc
+	dh_install
 
 # Build architecture-independent files here.
 binary-indep: build install

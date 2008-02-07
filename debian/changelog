@@ -1,3 +1,23 @@
+unifont (1:1.0-4~bpo40+1) etch-backports; urgency=low
+
+  * etch backport.
+
+ -- Robert Millan <rmh@aybabtu.com>  Thu,  7 Feb 2008 23:19:22 +0100
+
+unifont (1:1.0-4) unstable; urgency=low
+
+  * QA upload.
+  * Add unifont-bin package, with unifont.hex and hexdraw.  (Closes: #421640,
+    part of #62356).
+    - control: Add entry for unifont-bin.
+    - unifont-bin.{dirs,install}: Install unifont.hex and hexdraw.
+  * Switch to unifont.dirs / unifont-bin.install for installing unifont.pcf.
+  * control: Fix a pair of lintian errors.
+    - Move debhelper to Build-Depends.
+    - Set its dependency versioned to (>= 5.0.31).
+
+ -- Robert Millan <rmh@aybabtu.com>  Thu,  3 May 2007 18:33:39 +0200
+
 unifont (1:1.0-3) unstable; urgency=low
 
   * QA upload.
