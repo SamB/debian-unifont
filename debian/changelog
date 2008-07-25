@@ -1,3 +1,33 @@
+unifont (1:5.1.20080706-1) unstable; urgency=low
+
+  [ Paul Hardy ]
+  * Adopted orphaned unifont Debian package (Closes: #356594)
+  * Complete coverage of Unicode 5.1 Plane 0 (first coverage of all Plane 0)
+  * New version number (5.1) reflects Unicode 5.1 as its design base
+  * Adds Qianqian Fang's high-quality Wen Quan Yi CJK ideograph bitmaps
+  * Contains most recent unifont version as of 6 July 2008 (Closes: #218720)
+  * TrueType font scalable to any size (Closes: #178204)
+  * Combining characters (e.g., accents) work properly in TrueType font
+  * PCF font still included for now (TrueType is recommended with latest xfs)
+  * Incorporates Rich Felker's Tibetan glyphs (Closes: #441357)
+  * Built and tested under stable Etch release (4.0r3)
+  * Added unifont-bin utilities package
+    - Complete unifont font sources in Roman Czyborra's original .hex format
+    - Roman Czyborra's most important unifont Perl scripts (incl. orig hex2bdf)
+    - David Starner's modified hex2bdf not included (Debian no longer uses BDF,
+      and as David Starner noted splitting the BDF font breaks yudit)
+    - Luis Gonzales Miranda's TrueType unifont conversion scripts
+    - Paul Hardy's C programs for graphic editing of unifont glyphs
+    - man pages for all programs
+    - unitopbm.c not included -- license undetermined (keep bug 62356 open)
+
+  [ Anthony Fok ]
+  * Added myself to Uploaders.
+  * Revised packaging.
+  * Sponsored upload.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Thu, 24 Jul 2008 23:21:47 -0700
+
 unifont (1:1.0-4) unstable; urgency=low
 
   * QA upload.
@@ -66,4 +96,3 @@ unifont (19990401-1) unstable; urgency=low
   * Initial Release.
 
  -- Bart Schuller <schuller@debian.org>  Wed,  7 Apr 1999 22:26:14 +0200
-

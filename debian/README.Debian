@@ -1,0 +1,17 @@
+unifont for Debian
+------------------
+
+This package was first built and tested under Debian 4.0r3 (Etch,
+the current stable release).
+
+The "unifont" package replaces the old "unifont" package, which
+just installed a gzipped PCF font.  This new version installs the
+"xfonts-unifont" package (gzipped PCF font) plus the "ttf-unifont"
+package (TrueType font).  If someone wants only the TrueType font,
+they can install just the "ttf-unifont" package rather than the
+"unifont" package.
+
+The new "unifont-bin" package includes many utilities for building
+the GNU Unifont.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Mon,  7 Jul 2008 00:28:10 -0700

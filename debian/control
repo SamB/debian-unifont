@@ -1,24 +1,80 @@
 Source: unifont
 Section: x11
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
-Standards-Version: 3.6.2
-Build-Depends-Indep: xfonts-utils
+Maintainer: Paul Hardy <unifoundry@unifoundry.com>
+Uploaders: Anthony Fok <foka@debian.org>
 Build-Depends: debhelper (>= 5.0.31)
+Standards-Version: 3.8.0
+Homepage: http://unifoundry.com
 
 Package: unifont
 Architecture: all
-Recommends: ${misc:Depends}
-Description: X11 dual-width GNU Unicode font
- The GNU Unicode font is an X11 bitmap font in iso10646 encoding. It is
- useful if you have X programs such as the yudit text editor that are
- Unicode aware.
+Depends: xfonts-unifont, ttf-unifont
+Suggests: unifont-bin
+Description: font with a glyph for each visible Unicode 5.1 Plane 0 character
+ This metapackage is a convenient way to install both the PCF bitmap
+ version and the scalable TrueType outline version of GNU Unifont.
+ .
+ GNU Unifont was designed to render something besides an empty box
+ for each visible Unicode character in the Basic Multilingual Plane
+ (Plane 0).  Plane 0 contains most of the world's modern writing scripts.
+ This font looks best at 12pt.
+ .
+ Complex fonts (such as Indic or Semitic scripts, where letters
+ change shape depending on their position in a word, or such as
+ Mongolian, which is written vertically) will not render perfectly.
+ The philosophy behind this font, though, is that anything meaningful
+ is better than an empty box for a unknown glyph.
+
+Package: xfonts-unifont
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: ttf-unifont
+Description: PCF (bitmap) version of the GNU Unifont
+ This is a bitmap font in a standard X11 format.  The font provides
+ a glyph for each visible code point (character) in the Unicode Basic
+ Multilingual Plane (Plane 0).  Plane 0 contains most of the world's
+ modern writing scripts.  This font looks best at 12pt.
+ .
+ Complex fonts (such as Indic or Semitic scripts, where letters
+ change shape depending on their position in a word, or such as
+ Mongolian, which is written vertically) will not render perfectly.
+ The philosophy behind this font, though, is that anything meaningful
+ is better than an empty box for a unknown glyph.
+ .
+ Consider using the TrueType version instead (ttf-unifont), because
+ that version is scalable to any point size.
+
+Package: ttf-unifont
+Architecture: all
+Depends: defoma
+Description: TrueType version of the GNU Unifont
+ This is a bitmap font converted into a scalable TrueType outline
+ font.  Each pixel in the original bitmap font is represented as
+ an outlined square.  The font provides a glyph for each visible
+ code point (character) in the Unicode Basic Multilingual Plane
+ (Plane 0).  Plane 0 contains most of the world's modern writing
+ scripts.  This font looks best at 12pt.
+ .
+ Complex fonts (such as Indic or Semitic scripts, where letters
+ change shape depending on their position in a word, or such as
+ Mongolian, which is written vertically) will not render perfectly.
+ The philosophy behind this font, though, is that anything meaningful
+ is better than an empty box for a unknown glyph.
 
 Package: unifont-bin
-Architecture: all
-Description: Miscellaneous utilities associated with unifont
- This package provides other utilities that are part of the unifont source
- package but are not necessary for using the font itself:
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}
+Suggests: unifont, xfonts-utils, fontforge
+Description: utilities for manipulating the GNU Unifont
+ This is a set of Perl scripts, C programs, and FontForge scripts
+ to manipulate Roman Czyborra's GNU Unifont ".hex" format font
+ files.  The GNU Unifont has a Unicode-compatible font structure.
+ These utilities allow editing ".hex" fonts with text and
+ graphical editors, producing final versions of fonts in BDF,
+ PCF, TrueType SBIT, and TrueType outline formats.
  .
-  - unifont.hex: Unprocessed font in "hex" format
-  - hexdraw: Produces human-readable representation of .hex fonts
+ To build the TrueType fonts, install the package 'fontforge'.
+ To build the PCF fonts, use 'bdftopcf', which is in the
+ 'xfonts-utils' package.  To obtain the font sources, run
+ 'apt-get source unifont'.

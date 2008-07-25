@@ -1,0 +1,15 @@
+category truetype
+begin /usr/share/fonts/truetype/unifont.ttf
+  Family = GNU-Unifont
+  FontName = Unifont
+  Encoding = Unicode
+  Location = English
+  Charset = ISO10646-1
+  UniCharset = ISO10646-1
+  GeneralFamily = SansSerif
+  Weight = Medium
+  Width = Variable
+  Shape = NoSerif Upright
+  Foundry = unifoundry.com
+  Priority = 20
+end
