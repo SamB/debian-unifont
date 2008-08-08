@@ -29,7 +29,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXBUF 256
+#define MAXBUF 1000
 
 
 /*
@@ -74,7 +74,7 @@ int main(int argc, char *argv[]) {
    int i, j;                  /* loop variables                    */
    unsigned k0;               /* temp Unicode char variable        */
    unsigned swap;             /* temp variable for swapping values */
-   char inbuf[256];           /* input buffer                      */
+   char inbuf[MAXBUF];        /* input buffer                      */
 // unsigned headersize=0x28;  /* size of header (fixed in Windows) */
    unsigned filesize;         /* size of file in bytes             */
    unsigned bitmapsize;       /* size of bitmap image in bytes     */
@@ -327,11 +327,13 @@ int hex2bit(char *instring, unsigned char character[32][4]) {
    // width = (strlen(instring) - 1) >> 4; /* 16 hex digits per 8 bytes */
 
    if (strlen(instring) <= 34)  /* 32 + possible '\r', '\n' */
-      width = 0;
+     width = 0;
    else if (strlen(instring) <= 66)  /* 64 + possible '\r', '\n' */
       width = 1;
    else
       width = 4;
+
+   if (width > 1) width = 1; /* Disable quad-wide until fully implemented */
 
    k = (width > 1) ? 0 : 1;  /* if width < 3, start at index 1 else at 0 */
 

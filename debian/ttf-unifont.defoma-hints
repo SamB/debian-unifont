@@ -6,7 +6,7 @@ begin /usr/share/fonts/truetype/unifont.ttf
   Location = English
   Charset = ISO10646-1
   UniCharset = ISO10646-1
-  GeneralFamily = SansSerif
+  GeneralFamily = Typewriter
   Weight = Medium
   Width = Variable
   Shape = NoSerif Upright

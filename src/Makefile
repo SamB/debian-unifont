@@ -1,5 +1,5 @@
 
-CFLAGS = -g -O -Wall
+CFLAGS = -g -O2 -Wall
 
 INSTALLBINDIR = ../bin
 
@@ -18,7 +18,8 @@ CPROGS = unibmp2hex unicoverage unidup unihex2bmp \
 #
 # Programs written in Perl.
 #
-PPROGS = bdfimplode hex2bdf hex2sfd hexbraille hexdraw hexmerge johab2ucs2
+PPROGS = bdfimplode hex2bdf hex2bdf-split hex2sfd hexbraille hexdraw hexmerge \
+	 johab2ucs2
 
 PROGS = $(CPROGS) $(PPROGS)
 

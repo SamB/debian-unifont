@@ -36,7 +36,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAXBUF 256
+#define MAXBUF 1000
 
 
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
 
    unsigned i;                /* loop variable                     */
    unsigned k0, k1;           /* temp Unicode char variables       */
-   char inbuf[256];           /* input buffer                      */
+   char inbuf[MAXBUF];        /* input buffer                      */
    unsigned thischar;         /* the current character             */
    unsigned char thischarbyte; /* unsigned char lowest byte of Unicode char */
    unsigned char charbits[32][4];  /* bitmap for one character, 4 bytes/row */
@@ -253,6 +253,8 @@ void hex2bit(char *instring, unsigned char character[32][4]) {
       width = 1;
    else
       width = 4;
+
+   if (width > 1) width = 1;  /* width > 1 not fully implemented yet */
 
    k = (width > 1) ? 0 : 1;  /* if width < 3, start at index 1 else at 0 */
 

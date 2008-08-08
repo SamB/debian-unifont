@@ -120,12 +120,17 @@ int main(int argc, char *argv[]) {
    }
    /*
       Initialize selected code points for double width (16x16).
+      0 ==> 8 pixels wide; 1 ==> 16 pixels wide.
    */
    for (i = 0x1100; i <= 0x11FF; i++) wide[i] = 1; /* Hangul Jamo */
    for (i = 0x2580; i <= 0x259F; i++) wide[i] = 1; /* Block Elements */
    for (i = 0x2E80; i <= 0xA4CF; i++) wide[i] = 1; /* CJK */
 
    wide[0x303F] = 0; /* CJK half-space fill */
+
+   for (i = 0xFF01; i <= 0xFF60; i++) wide[i] = 1; /* Fullwidth ASCII */
+   for (i = 0xFFE0; i <= 0xFFE6; i++) wide[i] = 1; /* Fullwidth Symbol */
+
 
    /*
       Determine whether or not the file is a Microsoft Windows Bitmap file.

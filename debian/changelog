@@ -1,3 +1,43 @@
+unifont (1:5.1.20080808-1) unstable; urgency=low
+
+  * Added needed Replaces, Conflicts lines in debian/control (Closes: #493711)
+  * Added "Build-Depends-Indep: defoma" line in debian/control for access
+    to dh_installdefoma to install TrueType font (Closes: #494245)
+  * Changed ttf-unifont.defoma-hints file entry for "GeneralFamily"
+    from "SansSerif" to "Typewriter" as a better match
+  * Changed dh_lintian lines in debian/rules to use "( ... ) || /bin/true"
+    so debuild would succeed on a generic Etch DVD installation that
+    doesn't include dh_lintian in the debhelper package
+  * Added updates from Ubuntu unifont package:
+    - hex2bdf now uses additional BDF header lines for better font
+      description
+    - hex2bdf-split (originally Dave Starner's adaption of Roman
+      Czyborra's hex2bdf) renamed from hex2bdf.  Use is discouraged
+      but it's still here for now for completeness); wrote man page
+      & changed name of output font from "-gnu-fixed-*" to "-gnu-unifont-*"
+    - Added Georgian glyphs contributed to Ubuntu's unifont package by
+      Gia Shervashidze and Vladimer Sichinava
+  * Merged man page & Makefile changes done by Anthony Fok from Debian
+    diff file into .orig.tar.gz
+  * Made minor changes to existing programs in ./src
+    - unibmp2hex.c: forced double-wide glyphs where appropriate in
+      U+FFxx range
+    - uniunmask.c: increased buffer size & hard-coded "wide" variable
+      to avoid accidentally invoking a half-implemented extended
+      character widths
+    - unihex2bmp.c: same changes as in uniunmask.c
+  * Added to existing documentation
+    - Updated "./README" to reflect changes to Makefiles and add
+      more information
+    - Added "./font/hexsrc/README" to describe how to use all files
+      in that directory to create a font
+    - Added full font embedding exception to GPL from Wen Quan Yi
+  * Added improved glyphs for the U+FF00..U+FFFF block
+  * Removed "./font/hexsrc/blanks-5.1.hex"; it was identical to
+    "blanks.hex" in the same directory and the Makefiles never used it.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Fri,  8 Aug 2008 02:38:05 -0700
+
 unifont (1:5.1.20080706-1) unstable; urgency=low
 
   [ Paul Hardy ]

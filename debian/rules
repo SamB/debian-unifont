@@ -34,7 +34,7 @@ binary-indep: build install
 	dh_installchangelogs -i
 	dh_installxfonts -i
 	dh_installdefoma -i
-	[ -x /usr/bin/dh_lintian ] && dh_lintian -i
+	( [ -x /usr/bin/dh_lintian ] && dh_lintian -i ) || /bin/true
 	dh_link -i
 	dh_compress -i
 	dh_fixperms -i
@@ -52,7 +52,7 @@ binary-arch: build install
 	dh_installdocs -a
 	dh_installchangelogs -a
 	dh_installman -a
-	[ -x /usr/bin/dh_lintian ] && dh_lintian -a
+	( [ -x /usr/bin/dh_lintian ] && dh_lintian -a ) || /bin/true
 	dh_link -a
 	dh_strip -a
 	dh_compress -a

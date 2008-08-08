@@ -66,7 +66,22 @@ PCF, and TrueType fonts):
    The Unibit and other Wen Quan Yi fonts are released under the
    terms of the GNU General Public License (GPL) version 2, with
    the exception that embedding the font in a document does not
-   by itself bind that document to the terms of the GNU GPL.
+   by itself bind that document to the terms of the GNU GPL.  The
+   following paragraphs are taken from the Wen Quan Yi distribution:
+
+        ** GPL v2.0 license with font embedding exception:
+
+        As a special exception, if you create a document which
+        uses this font, and embed this font or unaltered portions
+        of this font into the document, this font does not by
+        itself cause the resulting document to be covered by
+        the GNU General Public License. This exception does not
+        however invalidate any other reasons why the document
+        might be covered by the GNU General Public License.
+        If you modify this font, you may extend this exception
+        to your version of the font, but you are not obligated
+        to do so. If you do not wish to do so, delete this
+        exception statement from your version.
 
    See http://wqy.sourceforge.net/cgi-bin/enindex.cgi (English)
    or http://wenq.org (Chinese) for more information on Wen Quan Yi.

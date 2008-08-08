@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Uploaders: Anthony Fok <foka@debian.org>
 Build-Depends: debhelper (>= 5.0.31)
+Build-Depends-Indep: defoma (>= 0.7.0)
 Standards-Version: 3.8.0
 Homepage: http://unifoundry.com
 
@@ -29,6 +30,8 @@ Description: font with a glyph for each visible Unicode 5.1 Plane 0 character
 Package: xfonts-unifont
 Architecture: all
 Depends: ${misc:Depends}
+Replaces: unifont (<< 1:5.1.20080706)
+Conflicts: unifont (<< 1:5.1.20080706)
 Suggests: ttf-unifont
 Description: PCF (bitmap) version of the GNU Unifont
  This is a bitmap font in a standard X11 format.  The font provides

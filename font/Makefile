@@ -15,7 +15,7 @@ SHELL = /bin/sh
 #
 # assembly date of this version
 #
-VERSION = 5.1.20080706
+VERSION = 5.1.20080808
 #
 # Path to local unifont-bin utilities.  If your system doesn't
 # use GNU's version of "make", use the first BINDIR definition.

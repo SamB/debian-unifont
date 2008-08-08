@@ -1,0 +1,11 @@
+
+* Determine optimal X-FontName for debian/ttf-unifont.defoma-hints.
+  In particular, determine if huge TrueType fonts must still be listed
+  as charcell ("-c-") or if they can be listed as proportional ("-p-")
+  without incurring a huge penalty from rasterizing the entire font
+  upon loading:
+
+       X-FontName = -gnu-unifont-medium-r-normal--0-0-0-0-p-0-iso10646-1
+
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Fri,  8 Aug 2008 07:27:23 -0700
