@@ -11,6 +11,7 @@ Homepage: http://unifoundry.com
 Package: unifont
 Architecture: all
 Depends: xfonts-unifont, ttf-unifont
+Replaces: unifont-bin (<< 1:5.1.20080706-1)
 Suggests: unifont-bin
 Description: font with a glyph for each visible Unicode 5.1 Plane 0 character
  This metapackage is a convenient way to install both the PCF bitmap

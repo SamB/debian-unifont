@@ -27,6 +27,7 @@ BINDIR = $(CURDIR)/../bin
 # The top-level directory for installing fonts on the system,
 # and the installation directories for PCF and TrueType fonts.
 #
+PKGDEST = $(DESTDIR)/usr/share/unifont
 FONTDEST = $(DESTDIR)/usr/share/fonts
 PCFDEST = $(FONTDEST)/X11/misc
 TTFDEST = $(FONTDEST)/truetype/unifont
@@ -187,10 +188,15 @@ install: precompiled/unifont.ttf precompiled/unifont.pcf.gz
 	   echo "Fatal Error: CURDIR not defined -- define in Makefile." ; \
 	   exit 1 ; \
 	fi
+	install -m0755 -d $(PKGDEST)
 	install -m0755 -d $(PCFDEST)
 	install -m0755 -d $(TTFDEST)
-	install -m0644 -p $(CURDIR)/precompiled/unifont.pcf.gz $(PCFDEST)/unifont.pcf.gz
-	install -m0644 -p $(CURDIR)/precompiled/unifont.ttf    $(TTFDEST)/unifont.ttf
+	install -m0644 -p $(CURDIR)/precompiled/unifont.hex     $(PKGDEST)/unifont.hex
+	install -m0644 -p $(CURDIR)/precompiled/unifontfull.hex $(PKGDEST)/unifontfull.hex
+	install -m0644 -p $(CURDIR)/precompiled/combining.txt   $(PKGDEST)/combining.txt
+	install -m0644 -p $(CURDIR)/precompiled/README          $(PKGDEST)/README
+	install -m0644 -p $(CURDIR)/precompiled/unifont.pcf.gz  $(PCFDEST)/unifont.pcf.gz
+	install -m0644 -p $(CURDIR)/precompiled/unifont.ttf     $(TTFDEST)/unifont.ttf
 
 clean:
 	rm -rf $(BDFDIR)/bmp-final

@@ -1,3 +1,21 @@
+unifont (1:5.1.20080808-2) unstable; urgency=low
+
+  * Install unifont.hex [and other files while I was at it] in
+    /usr/share/unifont for GRUB (Closes: #494473)
+    - unifont.hex provides glyphs with no combining circles, etc. and
+      is the same file as font/compiled/unifont-5.1.20080808.hex
+    - unifontfull.hex provides glyphs with combining circles, etc. and
+      is the same file as font/compiled/unifontfull-5.1.20080808.hex.
+      If editing hex glyphs, this file is the master version to edit;
+      unifont.hex is generated from this full version -- see uniunmask(1)
+      for details.
+    - combining.txt lists all Unicode 5.1 code points that are combining
+      glyphs, and hence should have zero-width.
+    - README gives a brief description of the above three files
+  * Corrected typos in the previous changelog entry.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sat,  9 Aug 2008 20:55:27 -0700
+
 unifont (1:5.1.20080808-1) unstable; urgency=low
 
   * Added needed Replaces, Conflicts lines in debian/control (Closes: #493711)
@@ -11,9 +29,9 @@ unifont (1:5.1.20080808-1) unstable; urgency=low
   * Added updates from Ubuntu unifont package:
     - hex2bdf now uses additional BDF header lines for better font
       description
-    - hex2bdf-split (originally Dave Starner's adaption of Roman
+    - hex2bdf-split (originally Dave Starner's adaptation of Roman
       Czyborra's hex2bdf) renamed from hex2bdf.  Use is discouraged
-      but it's still here for now for completeness); wrote man page
+      but it's still here for now for completeness; wrote man page
       & changed name of output font from "-gnu-fixed-*" to "-gnu-unifont-*"
     - Added Georgian glyphs contributed to Ubuntu's unifont package by
       Gia Shervashidze and Vladimer Sichinava
