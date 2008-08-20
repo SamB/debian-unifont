@@ -1,3 +1,17 @@
+unifont (1:5.1.20080820-1) unstable; urgency=low
+
+  * Replaced Hangul Syllables block with glyphs in unifont.bdf file
+    in Debian bf-utf-source package, originally from the Debian
+    xfonts-baekmuk package (Closes: #495729)
+    - Avoids license ambiguity of unifont's original Hanterm fonts
+    - Brings two diverging Debian copies of the unifont font closer together
+  * Deleted references to and all derivative copies of any Hanterm fonts
+  * Changed unifont package description in debian/control to mention
+    that the package now installs /usr/share/unifont/unifont.hex and
+    other files and is no longer just a metapackage (Closes: #494662)
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Wed, 20 Aug 2008 00:08:15 -0700
+
 unifont (1:5.1.20080808-2) unstable; urgency=low
 
   * Install unifont.hex [and other files while I was at it] in

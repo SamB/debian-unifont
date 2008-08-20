@@ -14,8 +14,10 @@ Depends: xfonts-unifont, ttf-unifont
 Replaces: unifont-bin (<< 1:5.1.20080706-1)
 Suggests: unifont-bin
 Description: font with a glyph for each visible Unicode 5.1 Plane 0 character
- This metapackage is a convenient way to install both the PCF bitmap
+ This package is a convenient way to install both the PCF bitmap
  version and the scalable TrueType outline version of GNU Unifont.
+ It also installs a copy of unifont.hex and related files in
+ /usr/share/unifont.
  .
  GNU Unifont was designed to render something besides an empty box
  for each visible Unicode character in the Basic Multilingual Plane

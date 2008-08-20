@@ -18,12 +18,13 @@ Copyright: Original unifont.hex and Perl scripts:
               (c) 2007-2008 Paul Hardy
            Mods to debian/ directory and Makefiles for Debian packaging:
               (c) 2008 Anthony Fok & Paul Hardy
-           Font files under the "hangul" directory:
-              (c) 1993-2000 Daeshik Kim, Junho Choi, et al.
+           Hangul Syllables glyphs (U+AC00..U+D7A3):
+              (c) 1986-2002 Jeong-Hwan Kim
+
 
 License for this package (all software by Paul Hardy, including GNU/Linux
-packaging, all software by Luis Gonzalez Miranda, Debian modifications
-by Anthony Fok, and the contents of the "font/hangul/" directory):
+packaging, all software by Luis Gonzalez Miranda, and Debian modifications
+by Anthony Fok):
 
    This package is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -47,8 +48,8 @@ and is licensed under the GPL.  See above.
 
 
 License for Roman Czyborra's work (including all Perl scripts in this
-package except "hex2sfd",  and all .hex font files except "wqy-cjk.hex" and
-"blanks.hex"):
+package except "hex2sfd",  and all .hex font files except "wqy-cjk.hex"
+and "blanks.hex"):
 
      The following is taken from http://czyborra.com/
 
@@ -90,4 +91,29 @@ PCF, and TrueType fonts):
 License for "blanks.hex":
 
    Paul Hardy has previously released "blanks.hex" into the public domain.
+
+
+License for the Hangul Syllables (U+AC00..U+D7A3) portion of the font:
+
+   Changwoo Ryu obtained the Hangul Syllables glyphs from the fonts
+   in the xfonts-baekmuk Debian package, which he maintains.  An
+   identical set of Hangul Syllables glyphs appears in the file
+   unifont.bdf in the bf-utf-source Debian package, also maintained
+   by Changwoo Ryu.  The xfonts-baekmuk package is licensed as follows:
+
+   Copyright (c) 1986-2002 Kim Jeong-Hwan [Jeong-Hwan Kim]
+   All rights reserved.
+
+   Permission to use, copy, modify and distribute this font is
+   hereby granted, provided that both the copyright notice and
+   this permission notice appear in all copies of the font,
+   derivative works or modified versions, and that the following
+   acknowledgement appear in supporting documentation:
+       Baekmuk Batang, Baekmuk Dotum, Baekmuk Gulim, and
+       Baekmuk Headline are registered trademarks owned by
+       Kim Jeong-Hwan.
+
+   [The xfonts-baekmuk package also contains a verison of the
+   above notice in Korean.]
+
 

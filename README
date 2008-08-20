@@ -1,5 +1,5 @@
 
-Subject: Unifont archive version 1:5.1.20080706
+Subject: Unifont archive version 1:5.1.20080820
 
 
 OVERVIEW
@@ -61,18 +61,24 @@ Roman Czyborra created the original GNU Unifont, including the
 David Starner aggregated many glyphs contributed by others and
 built these into earlier unifont releases.
 
-Qianqian Fang began his Wen Quan Yi font in 2004; most of the
+Qianqian Fang began his Wen Quan Yi fonts in 2004; most of the
 almost 30,000 CJK ideographs in the latest unifont were taken
 from Wen Quan Yi with permission of Qianqian Fang.  The glyphs
 in "./font/hexsrc/wqy-cjk.hex" are for the most part Qianqian
-Fang's unibit and Wen Quan Yi glyphs.
+Fang's unibit and 12pt Wen Quan Yi glyphs.
 
-Paul Hardy replaced the 11,172 thick-stroke Hangul Syllables glyphs
-with thin-stroke glyphs (a desire expressed by Roman Czyborra for
-years), merged Qianqian Fang's unibit and Wen Quan Yi glyphs into
-the GNU Unifont (with lots of help and enthusiasm from Qianqian Fang),
-drew about 8,500 more glyphs, and replaced the existing Tibetan glyphs
-with new ones contributed by Rich Felker.
+Changwoo Ryu created the 11,172 thick-stroke Hangul Syllables glyphs
+using thin-stroke glyphs from the xfonts-baekmuk Debian package, in
+the file unifont.bdf in the Debian bf-utf-source package.  The fonts
+in the xfonts-baekmuk Debian package were created by Jeong-Hwan Kim.
+Replacing the thick-stroke Hangul glyphs was a desire expressed by
+Roman Czyborra for years.
+
+Paul Hardy merged Qianqian Fang's unibit and Wen Quan Yi glyphs
+into the GNU Unifont (with lots of help and enthusiasm from Qianqian
+Fang), copied the Hangul Syllables glyphs from Changwoo Ryu's copy
+of unifont.bdf, drew about 8,500 more glyphs, and replaced the
+existing Tibetan glyphs with new ones contributed by Rich Felker.
 
 
 LICENSE
