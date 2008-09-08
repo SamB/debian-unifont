@@ -1,3 +1,16 @@
+unifont (1:5.1.20080914-1) unstable; urgency=low
+
+  * Changed unifont.ttf location in defoma-hints file. (Closes: #498874)
+  * Modified src/hex2sfd to superimpose combining diacritical marks on
+    top of preceding glyphs in TrueType font as per the Unicode Standard.
+    (Closes: #497326)
+  * Modified "cp -a" ==> "cp -p" and eliminated "install -t" in Makefiles
+    for BSD Unix compatibility.
+  * Renamed "combining.txt" to "combining.dat" because it is a data file.
+  * Generated new font/precompiled/unifont.ttf font from the above changes.
+
+ -- Paul Hardy <unifoundry@unifoundry.com>  Sun,  7 Sep 2008 23:09:17 -0700
+
 unifont (1:5.1.20080820-1) unstable; urgency=low
 
   * Replaced Hangul Syllables block with glyphs in unifont.bdf file

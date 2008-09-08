@@ -328,3 +328,5 @@ leading (blank space) between lines.
 * The arrows from 21E6 to 21F0 should be redesigned to look the same, as
 far as possible within the Unifont's constraints.
 
+* Review Mathematical Symbols and Box Drawing Symbols so they look good
+  combined with each other as intended.

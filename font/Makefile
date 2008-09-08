@@ -15,7 +15,7 @@ SHELL = /bin/sh
 #
 # assembly date of this version
 #
-VERSION = 5.1.20080820
+VERSION = 5.1.20080907
 #
 # Path to local unifont-bin utilities.  If your system doesn't
 # use GNU's version of "make", use the first BINDIR definition.
@@ -62,7 +62,7 @@ TTFSRC = ttfsrc
 #			> $(TTFSRC)/spaces.hex
 
 all: pcf bmp-final bmp-ref ttf
-	cp -a index.html compiled/index.html
+	cp -p index.html compiled/index.html
 
 #
 # Build the aggregate .hex font files
@@ -193,7 +193,7 @@ install: precompiled/unifont.ttf precompiled/unifont.pcf.gz
 	install -m0755 -d $(TTFDEST)
 	install -m0644 -p $(CURDIR)/precompiled/unifont.hex     $(PKGDEST)/unifont.hex
 	install -m0644 -p $(CURDIR)/precompiled/unifontfull.hex $(PKGDEST)/unifontfull.hex
-	install -m0644 -p $(CURDIR)/precompiled/combining.txt   $(PKGDEST)/combining.txt
+	install -m0644 -p $(CURDIR)/precompiled/combining.dat   $(PKGDEST)/combining.dat
 	install -m0644 -p $(CURDIR)/precompiled/README          $(PKGDEST)/README
 	install -m0644 -p $(CURDIR)/precompiled/unifont.pcf.gz  $(PCFDEST)/unifont.pcf.gz
 	install -m0644 -p $(CURDIR)/precompiled/unifont.ttf     $(TTFDEST)/unifont.ttf

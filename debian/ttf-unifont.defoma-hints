@@ -1,5 +1,5 @@
 category truetype
-begin /usr/share/fonts/truetype/unifont.ttf
+begin /usr/share/fonts/truetype/unifont/unifont.ttf
   Family = GNU-Unifont
   FontName = Unifont
   Encoding = Unicode
