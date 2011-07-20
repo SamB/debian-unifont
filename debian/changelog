@@ -1,3 +1,10 @@
+unifont (1:5.1.20080914-1.1) unstable; urgency=low
+
+  * Non-maintainer upload to achieve release goal of getting rid
+    of defoma.
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 20 Jul 2011 22:14:06 +0200
+
 unifont (1:5.1.20080914-1) unstable; urgency=low
 
   * Changed unifont.ttf location in defoma-hints file. (Closes: #498874)

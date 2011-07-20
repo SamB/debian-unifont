@@ -33,7 +33,6 @@ binary-indep: build install
 	dh_installdocs -i
 	dh_installchangelogs -i
 	dh_installxfonts -i
-	dh_installdefoma -i
 	( [ -x /usr/bin/dh_lintian ] && dh_lintian -i ) || /bin/true
 	dh_link -i
 	dh_compress -i

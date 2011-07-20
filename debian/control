@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Uploaders: Anthony Fok <foka@debian.org>
 Build-Depends: debhelper (>= 5.0.31)
-Build-Depends-Indep: defoma (>= 0.7.0)
 Standards-Version: 3.8.0
 Homepage: http://unifoundry.com
 
@@ -53,7 +52,6 @@ Description: PCF (bitmap) version of the GNU Unifont
 
 Package: ttf-unifont
 Architecture: all
-Depends: defoma
 Description: TrueType version of the GNU Unifont
  This is a bitmap font converted into a scalable TrueType outline
  font.  Each pixel in the original bitmap font is represented as
