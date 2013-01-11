@@ -2,19 +2,28 @@
   
 CFLAGS = -g -O2 -Wall
 
-build: build-stamp
+build-arch: build-stamp-arch
 
-build-stamp:
+build-stamp-arch:
 	dh_testdir
 	$(MAKE) CFLAGS='$(CFLAGS)'
-	touch build-stamp
+	touch $@
+
+build-indep: build-stamp-indep
+
+build-stamp-indep: build-stamp-arch
+	dh_testdir
+	$(MAKE) -C font
+	touch $@
+
+build: build-indep
 
 clean:
 	dh_testdir
 	dh_testroot
 	[ ! -f Makefile ] || $(MAKE) distclean
 	dh_clean
-	rm -f build-stamp
+	rm -f build-stamp-arch build-stamp-indep
 
 install: build
 	dh_testdir

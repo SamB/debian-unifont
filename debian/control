@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Paul Hardy <unifoundry@unifoundry.com>
 Uploaders: Anthony Fok <foka@debian.org>
 Build-Depends: debhelper (>= 5.0.31)
+Build-Depends-Indep: fontforge, xfonts-utils
 Standards-Version: 3.8.0
 Homepage: http://unifoundry.com
 
