@@ -1,0 +1,31 @@
+.TH HEX2SFD 1 "2008 Jul 06"
+.SH NAME
+hex2sfd \- Convert a GNU Unifont .hex file into a FontForge .sfd format.
+.SH SYNOPSIS
+.br
+.B hex2sfd < input_font.hex > output_font.sfd
+.SH DESCRIPTION
+.B hex2sfd
+reads a GNU Unifont .hex file from stdin and writes an outline font
+representation in FontForge Spline Font Database (.sfd) format.  The
+resulting .sfd file can then be converted by FontForge into a TrueType
+.ttf font.
+.PP
+.SH FILES
+.TP 15
+GNU Unifont .hex font files for input, FontForge .sfd font files for output
+.SH SEE ALSO
+bdfimplode(1), hex2bdf(1), hexbraille(1), hexdraw(1), hexmerge(1),
+johab2ucs2(1),
+unibmp2hex(1), unicoverage(1), unidup(1), unihex2bmp(1), unipagecount(1),
+uniunmask(1)
+.SH AUTHOR
+.B hex2sfd
+was written by Luis Gonzalez Miranda in 2005, with modifications by Paul Hardy
+in 2008.
+.SH LICENSE
+.B hex2sfd
+is released under version 2 of the GNU General Public License,
+or (at your option) a later version.
+.SH BUGS
+No known bugs exist.

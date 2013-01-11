@@ -1,0 +1,36 @@
+.TH BDFIMPLODE 1 "2008 Jul 06"
+.SH NAME
+bdfimplode \- Convert a BDF font into GNU Unifont .hex format.
+.SH SYNOPSIS
+.br
+.B bdfimplode < input_font.bdf > output_font.hex
+.SH DESCRIPTION
+.B bdfimplode
+reads a BDF font from stdin and writes GNU Unifont .hex conversion
+of the font to stdout.
+.PP
+.SH FILES
+.TP 15
+*.bdf font files
+.SH SEE ALSO
+hex2bdf(1), hexbraille(1), hex2sfd(1), hexdraw(1), hexmerge(1), johab2ucs2(1),
+unibmp2hex(1), unicoverage(1), unidup(1), unihex2bmp(1), unipagecount(1),
+uniunmask(1)
+.SH AUTHOR
+.B bdfimplode
+was written by Roman Czyborra.
+.SH LICENSE
+.B bdfimplode
+is Copyright (C) 1998 Roman Czyborra, and is released under the following
+terms (taken from http://czyborra.com):
+.PP
+"All of my works you find here are freeware. You may freely copy, use, quote,
+modify or redistribute them as long as you properly attribute my contribution
+and have given a quick thought about whether Roman might perhaps be interested
+to read what you did with his stuff. Horizontal rules don't apply."
+.SH BUGS
+.B bdfimplode
+was written to read a BDF file created by the
+.B hex2bdf
+script.  It will not properly handle other BDF files with differing
+bounding boxes.
