@@ -39,7 +39,9 @@ were written by Roman Czyborra (or in the case of johab2ucs2, by
 Jungshik Shin, who then gave it to Roman).  Roman originally named
 the "src/hexbraille" script as simply "braille"; Paul Hardy thought
 there was too great a chance of a conflict with other utilities,
-and so renamed it.
+and so renamed it.  The "hex2bdf-split" Perl script in the source
+directory is an adaptation of Roman's "hex2bdf" script that
+David Starner wrote in 1999.
 
 Luis Gonzalez Miranda wrote the original "hex2sfd" Perl script,
 as well as a "howto-build.sh" shell script that Paul Hardy converted
@@ -85,6 +87,9 @@ under the following terms:
      perhaps be interested to read what you did with his
      stuff. Horizontal rules don't apply.
 
+David Starner released what in this package is named "hex2bdf-split"
+under the same license as Roman Czyborra's work.
+
 License for all of Paul Hardy's work (except "johab2ucs2" and
 "blanks.hex", mentioned separately), Makefile and debian/ mods
 by Anthony Fok, and modified software from Luis Gonzalez Miranda
@@ -106,9 +111,25 @@ License for Fonts:
      fall under the above "License for all of Roman Czyborra's work".
 
      The fonts in "./font/precompiled" do use wqy-cjk.hex, and so
-     are liecensed under the GNU GPL version 2, with the exception
+     are licensed under the GNU GPL version 2, with the exception
      that embedding the font in a document does not in itself bind
-     that document to the terms of the GNU GPL.
+     that document to the terms of the GNU GPL.  The following
+     paragraphs explaining the exception is taken from the Wen
+     Quan Yi font distribution:
+
+          ** GPL v2.0 license with font embedding exception:
+
+          As a special exception, if you create a document which
+          uses this font, and embed this font or unaltered portions
+          of this font into the document, this font does not by
+          itself cause the resulting document to be covered by
+          the GNU General Public License. This exception does not
+          however invalidate any other reasons why the document
+          might be covered by the GNU General Public License.
+          If you modify this font, you may extend this exception
+          to your version of the font, but you are not obligated
+          to do so. If you do not wish to do so, delete this
+          exception statement from your version.
 
 License for "blanks.hex":
 
@@ -136,10 +157,20 @@ create a high-quality Chinese Unicode font in 2004.  He began by copying
 the GNU Unifont.  He replaced its Latin glyphs with another X11 font.
 He replaced the existing main CJK ideographs with a higher quality font
 that the People's Republic of China had placed in the public domain.
+The new CJK glyphs in the ranges U+3400..U+4DB5 and U+4E00..U+9FA5
+were developed from the Chinese National Standard GB19966-2005.
+
 Qianqian named this new font "unibit", and released it under the terms
 of the GNU General Public License (GPL) version 2, with the exception that
 embedding his font in a document did not by itself bind that document
 to the terms of the GNU GPL.
+
+Today the Wen Quan Yi font collection includes hand-drawn CJK ideographs
+in 9pt, 10pt, 11pt, and 12pt as well as a vector font.  The 12pt type
+has glyphs the same size as the GNU Unifont, except it adds two more
+pixels of leading (blank space) below each line.  This makes CJK easier
+to read.  For these reasons, Wen Quan Yi is recommended over the GNU Unifont
+for anyone planning to primarily use CJK ideographs.
 
 See http://wqy.sourceforge.net/cgi-bin/enindex.cgi (English) or
 http://wenq.org (Chinese) for more information on Wen Quan Yi.
@@ -208,18 +239,26 @@ works with a single, dual-width unifont.bdf file.
 
 BUILDING
 --------
-To make the binaries, fonts, bitmap charts (in a word, everything),
-and install the files on your system, cd into the top directory
-and type:
+To make the binaries from the top directory, type
 
-	make install
+     make
 
-Of course, review the destination directories in the Makefiles first.
+The compiled programs will be in the "./bin" directory.  To make
+and install the binaries and install the man pages, review the
+destination directories in the Makefiles and then type
 
-The compiled programs will be in the "./bin" directory.  The resulting
-fonts will be in the "./font/compiled" directory, along with bitmap
-renderings of each glyph before and after the removal of combining
-circle marks.
+     make install
+
+To make the fonts, bitmap charts, etc. within the "font" directory,
+install the "bdftopcf" program and FontForge.  Then from the top-level
+directory type
+
+     cd font
+     make
+
+The resulting fonts will be in the "./font/compiled" directory, along
+with bitmap renderings of each glyph before and after the removal of
+combining circle marks.
 
 WARNING: Building the TrueType version of GNU Unifont will require
 anywhere from 256 MByte to 1 GByte of virtual memory, possibly take
@@ -232,11 +271,6 @@ There is no reason to build the font from scratch unless you modify
 the .hex font source files (or must satisfy an insatiable curiosity),
 because the "./font/precompiled" directory already contains pre-built
 BDF, PCF, and TrueType fonts.
-
-To just make everything but not install anything above the top level
-unifont directory, cd into the top level directory and type
-
-     make
 
 If you've made a new version of the font, hand-copy the new font
 file(s) to your desired destination.  Otherwise, precompiled PCF
@@ -255,6 +289,18 @@ Building the fonts will not overwrite the "./font/precompiled" directory.
 So if you start building the TrueType font and then have second thoughts,
 there's no harm in interrupting the font build.  You can always fall
 back on what's in "./font/precompiled".
+
+To remove intermediate files, from the top-level directory type
+
+     make clean
+
+To remove all created files and leave the directory in its pre-build
+state, from the top-level directory type
+
+     make distclean
+
+That will remove the ./bin directory, the ./font/compiled directory,
+and other intermediate files.
 
 
 OPEN ISSUES

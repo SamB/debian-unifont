@@ -16,9 +16,9 @@ SHELL = /bin/sh
 # PREFIX=/usr/local
 PREFIX = $(DESTDIR)/usr
 
-DIRS = bindir mandir fontdir
+DIRS = bin man font
 
-all: $(DIRS)
+all: bindir
 	echo "Make is done."
 
 bindir:
@@ -30,7 +30,7 @@ mandir:
 fontdir:
 	set -e ; $(MAKE) -C font
 
-install: $(DIRS)
+install: bin
 	$(MAKE) -C src install PREFIX=$(PREFIX)
 	$(MAKE) -C man install PREFIX=$(PREFIX)
 	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
@@ -46,4 +46,4 @@ distclean:
 	$(MAKE) -C font distclean
 	rm -rf bin
 
-.PHONY: $(DIRS) all install clean distclean
+.PHONY: all install clean distclean

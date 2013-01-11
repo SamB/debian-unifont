@@ -1,5 +1,5 @@
 
-MANPAGES = bdfimplode.1 hex2bdf.1 hex2sfd.1 \
+MANPAGES = bdfimplode.1 hex2bdf.1 hex2bdf-split.1 hex2sfd.1 \
 	hexbraille.1 hexdraw.1 hexmerge.1 johab2ucs2.1 \
 	unibmp2hex.1 unicoverage.1 unidup.1 unihex2bmp.1 \
 	unipagecount.1 uniunmask.1
