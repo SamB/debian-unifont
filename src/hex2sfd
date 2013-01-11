@@ -2,24 +2,16 @@
 #
 # hex2sfd created in 2005 by Luis Gonzalez Miranda, http://www.lgm.cl
 #
-# %combining = ();
-# open(A, "<combining.txt");
-# while(<A>) {
-# 	chomp;
-# 	$combining{$A} = 1;
-# }
-# close(A);
-#
 # Modified by Paul Hardy, June 2008.
 #
-# The original code above didn't work properly.  The replacement code
+# The original combining mark code didn't work properly.  The replacement code
 # below wastes RAM, but it works as a quick fix.
 #
 @combining = ();
 for ($i = 0; $i < 65536; $i++) {
    push(@combining, 0);
 }
-open(A, "<combining.txt");
+open(A, "<combining.dat");
 while (<A>) {
    chomp;
    $combining[ hex($_) ] = 1;
@@ -37,7 +29,7 @@ close(A);
 $pixel   = 64;
 $descent = 2 * $pixel;
 $ascent  = 16 * $pixel - $descent;
-$bitmask = 25;  # round in x (doesn't really work), corner point selected
+# $bitmask = 25;  # round in x (doesn't really work), corner point selected
 
 print << "END";
 SplineFontDB: 1.0
@@ -93,8 +85,10 @@ while(<STDIN>) {
 	($c,$d)=split(/:/);
 	$width=length($d)/4;
 	$ptwidth=$pixel * $width;
+	$xoffset = 0; # assume this isn't a combining mark
 #	if($combining{$c}) {             # this was the original "if"
-	if ($combining[ hex($c) ]) {
+	if ($combining[ hex($c) ]) { # this code point is a combining mark
+		$xoffset = -$ptwidth; # we'll go left by this amount
 		$ptwidth = 0;
 	}
 	$cn=hex($c);
@@ -119,20 +113,23 @@ END
 				# point at i, width-1-j
 				if(!$prev) {
 					$x1=$x * $pixel + $pixel;
+					$x1 += $xoffset;
 					$y1=$y * $pixel - $descent;
 					$x2=$x1 + $pixel;
+					$x2 += $xoffset;
 					$y2=$y1 + $pixel;
 				}
 				$prev=1;
 			} else {
 				if($prev) {
 					$x2=$x * $pixel + $pixel;
+					$x2 += $xoffset;
 					print << "END";
-$x1 $y1 m $bitmask
- $x1 $y2 l $bitmask
- $x2 $y2 l $bitmask
- $x2 $y1 l $bitmask
- $x1 $y1 l $bitmask
+$x1 $y1 m 29
+ $x1 $y2 l 25
+ $x2 $y2 l 25
+ $x2 $y1 l 25
+ $x1 $y1 l 29
 END
 				}
 				$prev=0;
@@ -140,13 +137,13 @@ END
 			$num=int($num/2);
 		}
 		if($prev) {
-			$x2=0;
+			$x2 = $xoffset;
 			print << "END";
-$x1 $y1 m $bitmask
- $x1 $y2 l $bitmask
- $x2 $y2 l $bitmask
- $x2 $y1 l $bitmask
- $x1 $y1 l $bitmask
+$x1 $y1 m 29
+ $x1 $y2 l 25
+ $x2 $y2 l 25
+ $x2 $y1 l 25
+ $x1 $y1 l 29
 END
 		}
 	}

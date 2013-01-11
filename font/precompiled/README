@@ -3,7 +3,7 @@ Files:
 The following files are used to construct other
 GNU Unifont formats (BDF, PCF, TrueType):
 
-combining.txt   - Zero-width (combining) code points, one per line
+combining.dat   - Zero-width (combining) code points, one per line
 
 unifontfull.hex - Unifont with combining circles, noncharacter
                   graphics, etc.

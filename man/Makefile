@@ -13,7 +13,7 @@ all:
 
 install: $(MANPAGES)
 	install -m0755 -d $(INSTALLDIR)
-	install -m0644 -t $(INSTALLDIR) $(MANPAGES)
+	install -m0644 $(MANPAGES) $(INSTALLDIR)
 
 clean:
 
