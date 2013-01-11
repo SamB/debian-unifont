@@ -20,3 +20,4 @@ sub pack {
 s/([0-9A-F]{64})/&unpack($1)/ie || 
 s/([0-9A-F]{32})/&unpack($1)/ie ||
 s/\t([-#]+)\n/&pack($1)/e;
+
