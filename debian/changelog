@@ -1,3 +1,13 @@
+unifont (1:5.1.20080914-1.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/rules: Split and inline "install" target into "binary-arch" and
+    "binary-indep" and adjust dependencies.  (Without this,
+    "dpkg-buildpackage -B" ends up running the build-indep rules and dying
+    on the buildds.)
+
+ -- Samuel Bronson <naesten@gmail.com>  Sat, 12 Jan 2013 13:09:44 -0500
+
 unifont (1:5.1.20080914-1.2) unstable; urgency=low
 
   [ Samuel Bronson ]

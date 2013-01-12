@@ -11,7 +11,7 @@ build-stamp-arch:
 
 build-indep: build-stamp-indep
 
-build-stamp-indep: build-stamp-arch
+build-stamp-indep: build-arch
 	dh_testdir
 	rm -f font/precompiled/unifont*
 	$(MAKE) -C font
@@ -35,20 +35,22 @@ clean:
 	rm -f font/precompiled/unifont*
 	rm -f build-stamp-arch build-stamp-indep
 
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-	dh_installdirs
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
-	dh_install --sourcedir=debian/tmp
+
+DESTDIR=$(CURDIR)/debian/tmp
+PREFIX=$(DESTDIR)/usr
 
 #
 # The font files are architecture independent.
 #
-binary-indep: build install
+binary-indep: build-indep
 	dh_testdir -i
 	dh_testroot -i
+# <install>
+	dh_clean -i
+	dh_installdirs -i
+	$(MAKE) -C font PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
+	dh_install -i --sourcedir=debian/tmp
+# </install>
 	dh_installdocs -i
 	dh_installchangelogs -i
 	dh_installxfonts -i
@@ -64,9 +66,16 @@ binary-indep: build install
 #
 # Architecture-specific files here -- unifont-bin
 #
-binary-arch: build install
+binary-arch: build-arch
 	dh_testdir -a
 	dh_testroot -a
+# <install>
+	dh_clean -k -a
+	dh_installdirs -a
+	$(MAKE) -C src install PREFIX=$(PREFIX)
+	$(MAKE) -C man install PREFIX=$(PREFIX)
+	dh_install -a --sourcedir=debian/tmp
+# </install>
 	dh_installdocs -a
 	dh_installchangelogs -a
 	dh_installman -a
