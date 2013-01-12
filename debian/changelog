@@ -3,10 +3,8 @@ unifont (1:5.1.20080914-1.2) unstable; urgency=low
   * Non-maintainer upload.
   * Actually build the font files, using build-arch and build-indep to
     avoid killing any buildds. (Closes: #697902)
-  * Convert to format "3.0 (quilt)" before patching.
   * Don't include bogus glyphs for unallocated (as of Unicode 5.1) or
     private-use characters. (Closes: #584672)
-    - New patch omit-bogus-placeholder-glyphs.patch
 
  -- Samuel Bronson <naesten@gmail.com>  Thu, 10 Jan 2013 20:15:33 -0500
 

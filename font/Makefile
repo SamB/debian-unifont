@@ -44,15 +44,15 @@ HEXDIR = hexsrc
 # Wen Quan Yi CJK ideographs.  This version provides complete coverage
 # of the Unicode 5.1 Basic Multilingual Plane.
 #
-UNIFILES = $(HEXDIR)/blanks.hex $(HEXDIR)/rc-base.hex $(HEXDIR)/wqy-cjk.hex \
-	$(HEXDIR)/rc-hangul.hex $(HEXDIR)/rc-priv.hex
+UNIFILES = $(HEXDIR)/rc-base.hex $(HEXDIR)/wqy-cjk.hex \
+	$(HEXDIR)/rc-hangul.hex
 #
 # These are the files for building GNU Unifont with Roman Czyborra's
 # original Japanese public domain CJK ideographs.  This version is not
 # complete, as it is missing thousands of CJK ideographs.
 #
-UNIORIGFILES = $(HEXDIR)/blanks.hex $(HEXDIR)/rc-base.hex \
-	$(HEXDIR)/rc-cjk.hex $(HEXDIR)/rc-hangul.hex $(HEXDIR)/rc-priv.hex
+UNIORIGFILES = $(HEXDIR)/rc-base.hex \
+	$(HEXDIR)/rc-cjk.hex $(HEXDIR)/rc-hangul.hex
 #
 # Location of  TTF source directory, where TTF font is built.
 #
