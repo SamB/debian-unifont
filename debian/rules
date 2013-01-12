@@ -48,7 +48,7 @@ binary-indep: build-indep
 # <install>
 	dh_clean -i
 	dh_installdirs -i
-	$(MAKE) -C font PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
+	$(MAKE) -C font install PREFIX=$(PREFIX) DESTDIR=$(DESTDIR)
 	dh_install -i --sourcedir=debian/tmp
 # </install>
 	dh_installdocs -i
