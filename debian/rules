@@ -13,7 +13,16 @@ build-indep: build-stamp-indep
 
 build-stamp-indep: build-stamp-arch
 	dh_testdir
+	rm -f font/precompiled/unifont*
 	$(MAKE) -C font
+	cp font/compiled/unifont-*.bdf.gz font/precompiled/unifont.bdf.gz
+	rm -f font/compiled/unifontfull-jp-*.hex
+	cp font/compiled/unifontfull-*.hex font/precompiled/unifontfull.hex
+	rm -f font/compiled/unifont-jp-*.hex
+	cp font/compiled/unifont-*.hex font/precompiled/unifont.hex
+	cp font/compiled/unifont-*.pcf.gz font/precompiled/unifont.pcf.gz
+	cp font/compiled/unifont-*.ttf font/precompiled/unifont.ttf
+	cp font/compiled/unifont-*.bdf.gz font/precompiled/unifont.bdf.gz
 	touch $@
 
 build: build-indep
@@ -23,6 +32,7 @@ clean:
 	dh_testroot
 	[ ! -f Makefile ] || $(MAKE) distclean
 	dh_clean
+	rm -f font/precompiled/unifont*
 	rm -f build-stamp-arch build-stamp-indep
 
 install: build
