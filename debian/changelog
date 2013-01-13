@@ -5,6 +5,8 @@ unifont (1:5.1.20080914-1.3) unstable; urgency=low
     "binary-indep" and adjust dependencies.  (Without this,
     "dpkg-buildpackage -B" ends up running the build-indep rules and dying
     on the buildds.)
+  * debian/rules: Also fix so dpkg-buildpackage -j works, and only builds
+    the font files once.
 
  -- Samuel Bronson <naesten@gmail.com>  Sat, 12 Jan 2013 13:09:44 -0500
 

@@ -11,10 +11,11 @@ build-stamp-arch:
 
 build-indep: build-stamp-indep
 
-build-stamp-indep: build-arch
+build-stamp-indep: build-stamp-arch
 	dh_testdir
 	rm -f font/precompiled/unifont*
-	$(MAKE) -C font
+	# Parallel builds are broken, so we need -j1 here
+	$(MAKE) -C font -j1
 	cp font/compiled/unifont-*.bdf.gz font/precompiled/unifont.bdf.gz
 	rm -f font/compiled/unifontfull-jp-*.hex
 	cp font/compiled/unifontfull-*.hex font/precompiled/unifontfull.hex
@@ -92,4 +93,4 @@ binary-arch: build-arch
 	dh_builddeb -a
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: build-indep build-arch build clean binary-indep binary-arch binary
